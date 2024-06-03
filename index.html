@@ -7,9 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+
     <!-- displays site properly based on user's device -->
 
     <link
@@ -19,16 +20,12 @@
       href="./assets/images/favicon-32x32.png"
     />
 
-    <title>Frontend Mentor | Results summary component</title>
+    <title>Frontend Mentor | Social links profile</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       html {
         font-size: 62.5%;
-      }
-
-      body {
-        font-family: "hanken grotesk", sans-serif;
       }
 
       * {
@@ -37,347 +34,154 @@
         box-sizing: border-box;
       }
 
+      body {
+        font-family: "inter";
+        background-color: hsl(0, 0%, 12%);
+      }
+
       .container {
-        max-width: 35%;
-        margin: 5rem auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-content: center;
-        align-items: center;
-        border-radius: 3rem;
-        box-shadow: 0 0.5rem 1.4rem 0 hsla(0, 0%, 7%, 0.101);
-      }
-
-      .first-part {
+        max-width: 45rem;
         text-align: center;
-        padding: 3rem;
-        background-color: hsl(241, 81%, 54%);
-        border-radius: 3rem;
-        /* color: hsl(0, 0%, 100%); */
+        margin: 5rem auto;
+        padding: 4rem;
       }
 
-      .paragraph {
-        font-size: 1.8rem;
-        font-weight: 600;
-        line-height: 1.05;
-        margin-bottom: 2rem;
+      .article {
+        background-color: hsl(0, 0%, 18%);
+        padding: 4rem 0 2rem;
+        border-radius: 1.5rem;
       }
 
-      .paragraph,
-      .white-color {
-        color: hsla(0, 0%, 80%);
-      }
-
-      .heading-primary {
-        font-size: 7rem;
-        font-weight: 700;
-      }
-
-      .no-margin {
-        margin: 0;
-      }
-
-      .position {
+      .profile-img {
+        width: 30%;
+        height: auto;
         display: inline-block;
-        padding: 3rem;
-        border-radius: 50%;
-        background-image: linear-gradient(
-          hsla(256, 72%, 46%, 1),
-          hsl(241, 81%, 54%)
-        );
-        height: 20rem;
-        width: 20rem;
-        /* margin-bottom: 2rem; */
+        border-radius: 100%;
+        margin-bottom: 1.6rem;
       }
 
-      .heading-secondary {
+      .author-name {
+        margin-bottom: 0.4rem;
         font-size: 2.4rem;
-        margin-bottom: 2rem;
         color: hsl(0, 0%, 100%);
       }
 
-      .second-part {
-        /* width: 22rem; */
-        padding: 0 3rem;
-      }
-
-      .heading-tertiary {
-        font-size: 1.8rem;
-        font-weight: 600;
+      .location {
         margin-bottom: 2.4rem;
+        font-size: 1.4rem;
+        color: hsl(75, 94%, 57%);
       }
 
-      .score {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1.4rem;
-        padding: 0.8rem 1.2rem;
-        background-color: rebeccapurple;
+      .hobbies {
+        margin-bottom: 2rem;
+        font-size: 1.4rem;
+        color: hsl(0, 0%, 100%);
       }
 
-      .score p {
-        display: flex;
-        align-items: center;
-        gap: 0.8rem;
-      }
-
-      .reaction {
-        background-color: hsla(0, 100%, 67%, 0.05);
-        color: hsl(0, 100%, 67%);
-        color: hsl(hue, saturation, lightness);
-      }
-
-      .memory {
-        background-color: hsla(39, 100%, 56%, 0.05);
-        color: hsl(39, 100%, 56%);
-      }
-
-      .verbal {
-        background-color: hsla(166, 100%, 37%, 0.05);
-        color: hsl(166, 100%, 37%);
-      }
-
-      .visual {
-        background-color: hsla(234, 85%, 45%, 0.05);
-        color: hsl(234, 85%, 45%);
-      }
-
-      .reaction,
-      .memory,
-      .verbal,
-      .visual {
-        border-radius: 1rem;
-      }
-
-      .smaller-paragraph {
-        font-size: 1.8rem;
-        font-weight: 500;
-        color: hsl(0, 0%, 60%);
+      .btns {
+        display: grid;
+        justify-content: center;
+        row-gap: 1.4rem;
+        margin-bottom: 1.6rem;
       }
 
       .btn:link,
       .btn:visited {
         text-decoration: none;
-        padding: 1rem 5rem;
-        font-size: 1.6rem;
-        background-color: hsl(224, 30%, 27%);
+        padding: 1rem 7rem;
         color: hsl(0, 0%, 100%);
-        border-radius: 3.5rem;
-        transition: all 0.3s;
-        /* text-align: center; */
-        display: grid;
-        justify-content: center;
-        margin-top: 5rem;
+        background-color: hsl(0, 0%, 30%);
+        font-size: 1.6rem;
+        cursor: pointer;
+        border-radius: 1rem;
+        font-weight: 500;
       }
 
       .btn:hover,
       .btn:active {
-        background-image: linear-gradient(
-          hsla(256, 72%, 46%, 1),
-          hsl(241, 81%, 54%)
-        );
+        color: hsl(0, 0%, 20%);
+        background-color: hsl(75, 94%, 57%);
       }
 
       .attribution {
-        grid-column: 1/-1;
-        font-size: 11px;
+        font-size: 1.2rem;
+        color: hsl(0, 0%, 50%);
         text-align: center;
-        margin: 2rem 0;
-        color: hsl(228, 45%, 44%);
       }
+
       .attribution a:link,
       .attribution a:visited {
-        color: hsl(228, 45%, 44%);
+        color: hsl(0, 0%, 50%);
         text-decoration: none;
       }
 
-      /* ************************************** */
+      .attribution a:hover,
+      .attribution a:active {
+        color: hsl(75, 94%, 57%);
+      }
+
+      /* ************************** */
       /* RESPONSIVE */
-      /* ************************************** */
+      /* ************************** */
 
-      @media (max-width: 102em) {
-        .container {
-          max-width: 40%;
-        }
-        .smaller-paragraph {
-          font-size: 1.4rem;
-        }
-      }
-
-      @media (max-width: 82.5em) {
-        .container {
-          max-width: 50%;
-        }
-      }
-
-      @media (max-width: 62em) {
-        .container {
-          grid-template-columns: 1fr;
-          max-width: 40%;
+      @media (max-width: 26.25em) {
+        .author-name {
+          font-size: 1.6rem;
         }
 
-        .second-part {
-          margin: 2rem 0;
-        }
-      }
-
-      @media (max-width: 47em) {
-        .container {
-          max-width: 50%;
-        }
-      }
-
-      @media (max-width: 26em) {
-        .container {
-          max-width: 100%;
-          margin: 0;
-          border-radius: 0;
+        .location {
+          font-size: 0.9rem;
         }
 
-        .first-part {
-          border-top-left-radius: 0;
-          border-top-right-radius: 0;
+        .hobbies {
+          font-size: 0.9rem;
+        }
+
+        .btn:link,
+        .btn:visited {
+          text-decoration: none;
+          padding: 0.6rem 4rem;
+          color: hsl(0, 0%, 100%);
+          background-color: hsl(0, 0%, 30%);
+          font-size: 1rem;
+          cursor: pointer;
+          border-radius: 0.5rem;
+          font-weight: 500;
+        }
+
+        .attribution {
+          font-size: 0.8rem;
+          color: hsl(0, 0%, 50%);
+          text-align: center;
         }
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="first-part">
-        <p class="paragraph">Your Result</p>
-        <div class="position">
-          <h1 class="heading-primary">76</h1>
-          <p class="smaller-paragraph no-margin">of 100</p>
+      <div class="article">
+        <img
+          src="assets/images/avatar-jessica.jpeg"
+          alt="An image of Jessica Randall"
+          class="profile-img"
+        />
+        <h1 class="author-name">Jessica Randall</h1>
+        <p class="location">London, United Kingdom</p>
+        <p class="hobbies">"Front-end developer and avid reader."</p>
+        <div class="btns">
+          <a href="#" class="btn">GitHub</a>
+          <a href="#" class="btn">Frontend Mentor</a>
+          <a href="#" class="btn">LinkedIn</a>
+          <a href="#" class="btn">Twitter</a>
+          <a href="#" class="btn">Instagram</a>
         </div>
-
-        <h2 class="heading-secondary">Great</h2>
-        <p class="smaller-paragraph white-color">
-          You scored higher than 65% of the people who have taken these tests.
-        </p>
+        <div class="attribution">
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. Coded by <a href="#">delight</a>.
+        </div>
       </div>
-
-      <div class="second-part">
-        <p class="heading-tertiary">Summary</p>
-
-        <div class="score reaction">
-          <p class="smaller-paragraph">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="none"
-              viewBox="0 0 20 20"
-            >
-              <path
-                stroke="#F55"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.25"
-                d="M10.833 8.333V2.5l-6.666 9.167h5V17.5l6.666-9.167h-5Z"
-              />
-            </svg>
-            Reaction
-          </p>
-          <p class="smaller-paragraph">80 / 100</p>
-        </div>
-
-        <div class="score memory">
-          <p class="smaller-paragraph">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="none"
-              viewBox="0 0 20 20"
-            >
-              <path
-                stroke="#FFB21E"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.25"
-                d="M5.833 11.667a2.5 2.5 0 1 0 .834 4.858"
-              />
-              <path
-                stroke="#FFB21E"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.25"
-                d="M3.553 13.004a3.333 3.333 0 0 1-.728-5.53m.025-.067a2.083 2.083 0 0 1 2.983-2.824m.199.054A2.083 2.083 0 1 1 10 3.75v12.917a1.667 1.667 0 0 1-3.333 0M10 5.833a2.5 2.5 0 0 0 2.5 2.5m1.667 3.334a2.5 2.5 0 1 1-.834 4.858"
-              />
-              <path
-                stroke="#FFB21E"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.25"
-                d="M16.447 13.004a3.334 3.334 0 0 0 .728-5.53m-.025-.067a2.083 2.083 0 0 0-2.983-2.824M10 3.75a2.085 2.085 0 0 1 2.538-2.033 2.084 2.084 0 0 1 1.43 2.92m-.635 12.03a1.667 1.667 0 0 1-3.333 0"
-              />
-            </svg>
-            Memory
-          </p>
-          <p class="smaller-paragraph">92 / 100</p>
-        </div>
-
-        <div class="score verbal">
-          <p class="smaller-paragraph">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="none"
-              viewBox="0 0 20 20"
-            >
-              <path
-                stroke="#00BB8F"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.25"
-                d="M7.5 10h5M10 18.333A8.333 8.333 0 1 0 1.667 10c0 1.518.406 2.942 1.115 4.167l-.699 3.75 3.75-.699A8.295 8.295 0 0 0 10 18.333Z"
-              />
-            </svg>
-            Verbal
-          </p>
-          <p class="smaller-paragraph">61 / 100</p>
-        </div>
-
-        <div class="score visual">
-          <p class="smaller-paragraph">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="none"
-              viewBox="0 0 20 20"
-            >
-              <path
-                stroke="#1125D6"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.25"
-                d="M10 11.667a1.667 1.667 0 1 0 0-3.334 1.667 1.667 0 0 0 0 3.334Z"
-              />
-              <path
-                stroke="#1125D6"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.25"
-                d="M17.5 10c-1.574 2.492-4.402 5-7.5 5s-5.926-2.508-7.5-5C4.416 7.632 6.66 5 10 5s5.584 2.632 7.5 5Z"
-              />
-            </svg>
-            Visual
-          </p>
-          <p class="smaller-paragraph">72 / 100</p>
-        </div>
-
-        <a class="btn" href="#">Continue</a>
-      </div>
-    </div>
-
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
     </div>
   </body>
 </html>
